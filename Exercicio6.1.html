@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Array</title>
+</head>
+
+<body>
+
+    <h1>Aula de Array</h1>
+
+    <div id="output"></div>
+</body>
+
+<script>
+
+  var dias = new Array("Domingo","Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sabado");
+
+  var hoje = new Date();
+  var diaDaSemana = hoje.getDay // retorna os dias da semana conforme mostrado no comentário abaixo.//
+/*
+0 - Domingo;
+1 - segunda;
+2 - terça;
+3 - quarta;
+4 - quinta;
+5 - sexta;
+6 - sabado
+
+*/
+
+alert("Bem Vindo, hoje é  " + dias[diaDaSemana]);
+
+</script>
+
+
+</html>

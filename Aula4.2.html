@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="sortcut icon" href="./img/technology.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/Calculadora.css">
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <h1>Calculadora com JavaScript</h1>
+
+        <button id="somar" onclick="somar()" type="button" class="btn btn-warning">+</button>
+        <button id="subtrair" onclick="subtrair()" type="button" class="btn btn-warning">-</button>
+        <button id="multiplicar" onclick="multiplicar()" type="button" class="btn btn-warning">*</button>
+        <button id="dividir" onclick="dividir()" type="button" class="btn btn-warning">/</button>
+
+        <div class="ml-4" id="output"></div>
+
+    </div>
+    <script>
+        var n1 = parseFloat(prompt("Olá, Digite um número"));
+
+        escreve();
+
+        function escreve() {
+            var output = document.querySelector('#output');
+            output.innerHTML = n1;
+
+        }
+
+        function somar() {
+            var n = parseFloat(prompt("Digite outro número"));
+            n1 += n;
+            escreve();
+        }
+
+        function subtrair() {
+            var n = parseFloat(prompt("Digite outro número"));
+            n1 -= n;
+            escreve();
+        }
+        function multiplicar() {
+            var n = parseFloat(prompt("Digite outro número"));
+            n1 *= n;
+            escreve();
+        }
+        function dividir() {
+            var n = parseFloat(prompt("Digite outro número"));
+            n1 /= n;
+            escreve();
+        }
+
+    </script>
+
+</body>
+
+</html>

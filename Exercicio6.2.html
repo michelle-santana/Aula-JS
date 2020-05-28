@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+</head>
+
+<body>
+
+    <h1>Aula de Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>  
+   
+    <script>
+
+        var produto = new Object()
+        produto.nome ="Bolsa";
+        produto.preco = 20;
+        produto.estoque = 5;
+
+        produto.comprar = function(qtd){
+            if(!qtd){
+                qtd = 1;
+            }
+            console.log("Comprou bolsa")
+            this.estoque = this.estoque - qtd;
+            console.log(this.estoque)
+        }
+
+        var mensagem = " ";
+
+        mensagem += "Nome: " + produto.nome + "<br>"
+        mensagem += "Preço: " + produto.preco + "<br>"
+        mensagem += "Estoque: " + produto.estoque + "<br>"
+
+        document.querySelector('#output').innerHTML = mensagem;
+
+
+
+
+       
+
+    </script>
+</body>
+
+</html>

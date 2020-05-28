@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+</head>
+
+<body>
+
+    <h1>Aula de Array de dados</h1>
+    <div id="output"></div>
+
+    <script>
+        var produtos = [
+            { "nome": "Bolsa", "preco": 20, "estoque": 5 },
+            { "nome": "Bota", "preco": 15,"estoque": 3 },
+            { "nome": "Calça", "preco": 35,"estoque": 10 },
+            { "nome": "Blusa", "preco": 10,"estoque": 15 },
+
+        ];
+
+        var msg ="";
+        
+        for(var i = 0; i < produtos.length; i++){
+          
+            msg+= "<h2>produto: " + produtos[i].nome + "</h2>";
+            msg+= "<p>preço: " + "R$" + produtos[i].preco + "</p>";
+            msg+= "<p>estoque: " + "Qtd: " + produtos[i].estoque + "</p>";
+
+        }
+
+        document.querySelector("#output").innerHTML= msg;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 de Lógica de Programação com JavaScript</title>
+</head>
+
+<body>
+    <H1>Hi! Aconchegue-se</H1>
+    <H1>Fique confortável para aprender muitas coisas...</H1>
+
+    <script>
+        var nota1 = parseInt(prompt("Digite sua primeira nota"));
+
+        var nota2 = parseInt(prompt("Digite sua segunda nota"));
+
+        var media = (nota1 + nota2) / 2;
+
+        //EXERCICIO USANDO O && (AND)
+
+        //  if (media > 5 && nota1 > 0 && nota2 > 0) {
+        //      alert("Parabéns você foi aprovado!")
+        //  } else {
+        //      alert("Desculpe, você foi reprovado.")
+        // }
+        
+        // EXERCICIO USANDO O || (OR)
+        if( nota1 === 0 || nota2 === 0 || media <= 5){
+            alert("Desculpe, não foi dessa vez.")
+        } else {
+            alert("Parabéns! você foi aprovado")
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="sortcut icon" href="./img/technology.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/Calculadora.css">
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <h1>Calculadora com JavaScript</h1>
+
+        <button id="calcular" onclick="iniciarCalculo('+')" type="button" class="btn btn-warning">+</button>
+        <button id="calcular" onclick="iniciarCalculo('-')" type="button" class="btn btn-warning">-</button>
+        <button id="calcular" onclick="iniciarCalculo('*')" type="button" class="btn btn-warning">*</button>
+        <button id="calcular" onclick="iniciarCalculo('/')" type="button" class="btn btn-warning">/</button>
+
+        <div class="ml-4" id="output"></div>
+
+    </div>
+    <script>
+        var n2 = parseFloat(prompt("Olá, Digite um número"));
+
+        escreve(n2);
+
+
+        function iniciarCalculo(simbolo) {
+
+            if (simbolo !== '+' || simbolo !== '-' ||
+                simbolo !== '*' || simbolo !== '/') {
+                alert("Digite um simbolo válido");
+                return 0;
+            }
+
+
+
+            if (isNaN(n1) || isNaN(n2)) {
+                alert("chama passando somente números");
+                return 0;
+            }
+
+
+            var n1 = parseFloat(document.querySelector('#output').textContent);
+
+            var n2 = parseFloat(prompt("Digite outro número"));
+
+            var msg = calcular(simbolo, n1, n2);
+
+            escreve(msg);
+        }
+
+        function escreve(mensagem) {
+            var output = document.querySelector('#output');
+            output.innerHTML = mensagem;
+
+        }
+
+        function calcular(simbolo, n1, n2) {
+
+            var numeroCalculado = null;
+
+            switch (simbolo) {
+                case '+':
+                    numeroCalculado = n1 + n2;
+                    break;
+                case '-':
+                    numeroCalculado = n1 - n2;
+                    break;
+                case '*':
+
+                    numeroCalculado = n1 * n2;
+                    break;
+                case '/':
+
+                    numeroCalculado = n1 / n2;
+            }
+
+
+            return numeroCalculado;
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

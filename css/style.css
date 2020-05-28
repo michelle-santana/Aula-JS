@@ -1,0 +1,9 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#mostrar{
+margin-left: 80px;
+
+}

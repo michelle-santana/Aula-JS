@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+</head>
+
+<body>
+
+    <script>
+        var numero = parseFloat(prompt("Digite um número"));
+        var indice = 1;
+
+        // Repita até que uma variavel chamada indice seja <= 1000//
+        // Função abaixo mostra a tabuada de 1 a 1000//
+
+        while (indice <= 1000) {
+
+            document.write(numero + ' x ' + indice + ' = ' + (numero * indice) + ' <br>');
+
+            if (indice % 10 === 0 && indice > 0) {
+                document.write('<hr>');
+            }
+
+            indice = indice + 1;
+        }
+        document.write('Saiu do loop');
+
+
+        //   //Do while permite que o bloco de código seja executado ao menos uma vez//
+        do {
+            document.write(numero + ' x ' + indice + ' = ' + (numero * indice) + ' <br>');
+            indice = indice + 1;
+        } while (indice <= 1000);
+        document.write('Saiu do loop');
+
+
+        // // usando For //
+        // for( var i = 1; i <= 1000; i ++){
+        //     document.write(numero + ' x ' + i + ' = ' + (numero * i) + ' <br>');
+        // }
+        //  document.write("Saiu do loop")
+
+
+
+
+
+
+        // Dessa forma você teria que repetir muitas vezes, 
+        //é uma pessima ideia para uma função tão grande. Serve para pequenas funcões;
+
+        // document.write(numero + ' x 1 = ' + (numero * 1) + ' <br>');
+        // document.write(numero + ' x 2 = ' + (numero * 2) + ' <br>');
+        // document.write(numero + ' x 3 = ' + (numero * 3) + ' <br>');
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

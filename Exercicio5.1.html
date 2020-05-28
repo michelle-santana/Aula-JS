@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de excesões Try Catch</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="sortcut icon" href="./img/bars-chart.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/area.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <h1>Calculando a área</h1>
+
+        <button id="mostrar1" onclick="mostrarAreaAlert(largura, altura)" type="button" class="btn btn-danger">Mostrar
+            área num
+            alert</button>
+        <button onclick="mostrarAreaOutput(largura, altura)" type="button" class="btn btn-warning">Mostrar área no
+            output</button>
+
+        <div id="output">
+
+        </div>
+
+
+    </div>
+    <script>
+        var largura = parseFloat(prompt("Digite uma largura"));
+        var altura = parseFloat(prompt("Digite uma altura"));
+
+        function mostrarAreaAlert() {
+            
+          try{
+            var area = calcularArea(largura, altura);
+            
+          } catch(e) {
+               area = e;
+
+          }
+          alert('A área total é: ' + area);
+        }
+
+        function mostrarAreaOutput() {
+            try{
+                var area = calcularArea(largura, altura);
+            } catch (e){
+              area = e;
+            }
+           
+            document.querySelector('#output').innerHTML = ('A área total é: ' + area);
+        }
+
+        function calcularArea(l, a) {
+            if( l === undefined || a === undefined) {
+                throw new Error("calcular área precisa de dois números");
+            } if( isNaN(l) || isNaN(a)){
+                throw new Error("apenas números")
+            }
+            return l * a;
+        }
+
+
+    </script>
+</body>
+
+</html>

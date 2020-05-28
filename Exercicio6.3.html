@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+</head>
+
+<body>
+
+    <h1>Exercício Array de Objetos</h1>
+    <div id="output"></div>
+
+    <script>
+        var pessoas = [
+            { "nome": "Patricia Santos", "email": "pat@gmail.com", "cidade": "Ceará" },
+            { "nome": "Michelle Machado", "email": "michelle.99@gmail.com", "cidade": "Rondônia" },
+            { "nome": "Patricia Santos", "email": "pat@gmail.com", "cidade": "Ceará" },
+            { "nome": "Patricia Santos", "email": "pat@gmail.com", "cidade": "Ceará" },
+            { "nome": "Patricia Santos", "email": "pat@gmail.com", "cidade": "Ceará" },
+
+        ];
+
+        var mensagem = "";
+
+         for(var i= 0; i < pessoas.length; i++){
+            mensagem+= "<h2>Nome: " + pessoas[i].nome + "</h2>";
+            mensagem+= "<p>E-mail: " + pessoas[i].email + "</p>";
+            mensagem+= "<p>Cidade de nascimento: " + pessoas[i].cidade + "</p>";
+         }
+
+
+
+        document.querySelector("#output").innerHTML = mensagem;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="sortcut icon" href="./img/bars-chart.png" type="image/x-icon" />
+</head>
+<body>
+
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <button onclick="mostrarArea(largura, altura)" type="button" class="btn btn-info">Mostrar área</button>
+    
+    <script>
+     var largura = parseFloat(prompt("Digite uma largura"));
+     var altura = parseFloat(prompt("Digite uma altura"));
+
+     function mostrarArea(l, a){
+        alert("área total: " + (l*a));
+
+     }
+
+
+    </script>
+</body>
+</html>
