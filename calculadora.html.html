@@ -82,14 +82,21 @@
 	<script>
 		var numero = "0";
 		var operacao = null;
-		var outroNumero = "";
+		var outroNumero = " ";
 
 		function incluirDigito(digito) {
+			if (outroNumero && operacao && clicadoEmIgual) {
+				clicadoEmIgual = false;
+				limpar();
+				numero = digito;
+				mostrarNoDisplay(numero);
+				return
+			}
 			if (operacao !== null) {
 				outroNumero = outroNumero + digito;
 				mostrarNoDisplay(outroNumero);
 			} else {
-				if (numero == "0") {
+				if (numero === "0") {
 					numero = digito;
 				} else {
 					numero += digito;
@@ -101,45 +108,97 @@
 
 		}
 
-		function calcular(){
-			var ncalculado = 0;
-			var n1 = parseFloat(numero)
-			var n2 = parseFloat(outroNumero)
-			
-			switch (operacao){
+		var clicadoEmIgual = false;
+
+		function finalizarCalculo() {
+			clicadoEmIgual = true;
+			var resultado = calcular();
+			numero = resultado;
+			mostrarNoDisplay(numero);
+			console.log(numero, operacao, outroNumero);
+		}
+
+		function calcular() {
+			var nCalculado = 0;
+			var n1 = parseFloat(numero);
+			var n2 = parseFloat(outroNumero);
+
+			switch (operacao) {
 				case "+":
-					ncalculado = n1 + n2;
+					nCalculado = n1 + n2;
 					break;
 				case "-":
-					ncalculado = n1 - n2;
+					nCalculado = n1 - n2;
 					break;
 				case "*":
-					ncalculado = n1 * n2;
+					nCalculado = n1 * n2;
 					break;
 				case "/":
-					ncalculado = n1 / n2;
-					
+					nCalculado = n1 / n2;
+					break;
+
+				default:
+
 			}
-			return ncalculado;
-			
+			return nCalculado;
+
 		}
 
 		function iniciarCalculo(simbolo) {
-        			if (operacao === null || outroNumero === ""){
+			if (clicadoEmIgual) {
+				clicadoEmIgual = false;
+				outroNumero = "";
+			}
+			if (operacao === null || outroNumero === "") {
 				operacao = simbolo;
 			} else {
 				//já tem o numero, operacao e o outroNumero;
-				var resultado = calcular;
+				var resultado = calcular();
 				numero = resultado;
 				operacao = simbolo;
 				outroNumero = "";
 				mostrarNoDisplay(numero);
 			}
-			 console.log(numero, operacao, outroNumero);
+			//  console.log(numero, operacao, outroNumero);
 		}
 
+		function incluirPonto() {
+			if (operacao && outroNumero === "") {
+				outroNumero = "0.";
+			} else if (operacao && outroNumero) {
+				numero += ".";
+			} else {
+				numero += ".";
+			}
+
+		}
+
+		function limpar() {
+			numero = "0";
+			operacao = null;
+			outroNumero = "";
+			mostrarNoDisplay(numero);
+		}
+
+		function obterPorcento() {
+			if (!outroNumero) {
+				limpar();
+				mostrarNoDisplay(numero);
+			} else {
+				if (operacao === "+" || operacao === "-") {
+					var porcentagem = n1 * outroNumero / 100;
+				} else {
+					var porcentagem = outroNumero / 100;
+				}
+				outroNumero = porcentagem;
+				mostrarNoDisplay(outroNumero);
+			}
+		}
+
+
+
 		function mostrarNoDisplay(valor) {
-			document.querySelector('#display').innerHTML = valor
+			document.querySelector('#display').innerHTML = valor;
 		}
 
 	</script>
