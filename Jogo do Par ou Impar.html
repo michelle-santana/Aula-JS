@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Par ou Ímpar</title>
+    <link rel="shortcut icon" href="./img/design-de-icones-do-casino_24911-35617.jpg" />
+    <link rel="stylesheet" href="css/jogoPar.css">
+</head>
+
+<body>
+
+    <div id="estrutura">
+        <h1>Jogo do Par ou Ímpar</h1>
+        <img src="./img/dado.png" width="90px" alt="imagem loteria">
+
+
+
+        <p>Digite um número de 0 a 10
+        <input type="number" id="meuNumero" min="0" max="10"></p>
+
+        <label><input type="radio" name="opcao" values="par" checked>Par</label><br>
+        <label><input type="radio" name="opcao" values="impar">Ímpar</label><br><br><br>
+
+        <button onclick="jogar()">Jogar</button>
+    </div>
+    <script>
+
+
+        var numeroComputador = "";
+        var numeroJogador = "";
+        var minhaEscolha = "par";
+
+        function sortear(max) {
+            return Math.floor(Math.random() * max);
+
+        }
+
+        function jogar() {
+            numeroJogador = parseFloat(document.querySelector("#meuNumero").value);
+            numeroComputador = sortear(10);
+
+            if (!numeroJogador) {
+                alert("primeiro digite um número")
+                return;
+            }
+
+            var total = numeroJogador + numeroComputador;
+
+            var resultado = (total % 2 === 0) ? "par" : "Ímpar";
+            verificarResultado(resultado)
+
+        }
+
+        function verificarResultado(resultado) {
+
+            if (minhaEscolha === resultado) {
+                alert("Eu Ganhei!");
+            } else {
+                alert("O Computador ganhou!");
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
