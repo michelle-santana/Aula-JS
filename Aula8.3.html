@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Logica de Programação Javascript</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Lógica de programação com Javascript</h1>
+
+    <div id="output"></div>
+</body>
+
+<script>
+    // Primeira opção não está funcional, não devemos armazenas os dados do objeto numa string//
+    //    var alunos = [
+    //        {nome: 'michel', id: 112233, endereco: 'rua faz de conta 2, ap 3, são paulo SP'},
+    //        {nome: 'josé', id: 112244, endereco: 'rua belezura 5, Sao paulo'},
+    //        {nome: 'joão', id: 113344, endereco: 'rua belezura 20, Sao Paulo - perto do josé'},
+    //        {nome: 'maria', id: 114444, endereco: 'rua chuchu 1, RJ'},
+    //        {nome: 'ana', id: 114555, endereco: 'Av belezura 41,  SP'},
+    //    ]
+
+    var alunos = [
+        {nome:"michelle", id: 112233, endereco: new Endereco({lougradouro:"rua minas gerais ", n:345, complemento: null, cidade: "são paulo", estado: "sp", cep:"44444-000"}) },
+        {nome:"ana", id: 112244, endereco: new Endereco({lougradouro:" rua alexandre benois", n:56, complemento: null, cidade: "são josé", estado: "sp", cep:"33333-111"}),
+        {nome:"joão", id: 112255, endereco: new Endereco({lougradouro:"rua das pipas ", n:9, complemento: null, cidade: "santana do parnaiba", estado: "sp", cep:"22222-000"}),
+        {nome:"josé", id: 112266, endereco: new Endereco({lougradouro:"avenida itapuã ", n:220, complemento: null, cidade: "salvador", estado: "ba", cep:"11111-098"}),
+        {nome:"michel", id: 112277, endereco: new Endereco({lougradouro:"avenida nossa senhora do sabará ", n:10, complemento: null, cidade: "rio de janeiro", estado: "rj", cep:"05729-090"})
+    ];
+
+
+
+
+
+
+    var msg = "";
+
+
+    document.querySelector('#output').innerHTML = msg;
+
+
+</script>
+
+</html>

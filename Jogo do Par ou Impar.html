@@ -20,8 +20,8 @@
         <p>Digite um número de 0 a 10
         <input type="number" id="meuNumero" min="0" max="10"></p>
 
-        <label><input type="radio" name="opcao" values="par" checked>Par</label><br>
-        <label><input type="radio" name="opcao" values="impar">Ímpar</label><br><br><br>
+         <label><input type="radio" name="opcao" values="par" checked>Par</label><br>
+        <label><input type="radio" name="opcao" values="impar">Ímpar</label><br><br><br> 
 
         <button onclick="jogar()">Jogar</button>
     </div>
@@ -30,7 +30,7 @@
 
         var numeroComputador = "";
         var numeroJogador = "";
-        var minhaEscolha = "par";
+        var minhaEscolha = "";
 
         function sortear(max) {
             return Math.floor(Math.random() * max);
@@ -40,7 +40,8 @@
         function jogar() {
             numeroJogador = parseFloat(document.querySelector("#meuNumero").value);
             numeroComputador = sortear(10);
-
+            minhaEscolha = document.querySelector('input[type="radio"]:checked').value
+            
             if (!numeroJogador) {
                 alert("primeiro digite um número")
                 return;

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Lógica de Programação</title>
+</head>
+
+<body>
+
+    <h1>Cálculo de média</h1>
+    <div id="output"></div>
+
+    <script>
+        var alunos = [
+            { nome: "Michelle Santana", notas: [2, 4, 5, 7] },
+            { nome: "Mirelle Soares", notas: [10, 3, 2, 6] },
+            { nome: "Ana Araujo", notas: [3, 5, 6, 8] },
+            { nome: "Claudinei Gil", notas: [6, 9, 8, 4] },
+            { nome: "Theo Santana", notas: [2, 4, 6, 3] }
+        ];
+
+        var mediaAlunos = 0;
+        var msg = "";
+
+        for (var i = 0; i < alunos.length; i++) {
+            msg += "<p><hr> " + alunos[i].nome + "</p>"
+            var notas = alunos[i].notas;
+            msg += "<p>Notas: " + notas.join("|") + "</p>"
+            var totalNotas = 0;
+
+            for (var j = 0; j < notas.length; j++) {
+                totalNotas += notas[j];
+
+            }
+            var media = totalNotas / notas.length;
+            mediaAlunos += media;
+            msg += "<p>A média é: " + media + "</p>"
+        }
+        msg += "<h2>A média de todos os alunos é: " + mediaAlunos/alunos.length + "</h2>"
+
+        document.querySelector("#output").innerHTML = msg;
+    </script>
+</body>
+
+</html>
